@@ -65,21 +65,22 @@
     <script>
       var z = "";
       var x = document.getElementsByTagName("button");
-      var div = document.getElementById("mainPic");
-
-      x[0].onclick = function() {
+      var div = (x[0].onclick = function() {
         z = setInterval(ham, 500);
-      };
+      });
 
       function ham() {
         x[0].onclick = function() {
           for (var i = 1; i <= 6; i++) {
-            div.innerHTML = '<img src="./img/' + i + '.jpg" width="80%">';
+            document.getElementById("mainPic").innerHTML =
+              '<img src="./img/' + i + '.jpg" width="80%">';
           }
         };
       }
 
-      x[1].onclick = function() {};
+      x[1].onclick = function() {
+        document.getElementById("mainPic").innerHTML = "";
+      };
     </script>
   </body>
 </html>
