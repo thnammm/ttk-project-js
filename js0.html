@@ -19,14 +19,17 @@
     }
 
     #mainPic {
-      height: 200px;
-      width: 200px;
       text-align: center;
+      margin: 20px;
+    }
+
+    img {
+      border-radius: 10px;
     }
 
     table {
       text-align: center;
-      margin: 20px 50px;
+      margin: 20px 40px;
       display: flex;
       justify-content: center;
     }
@@ -34,22 +37,22 @@
     button {
       background-color: transparent;
       border: none;
-      width: 120px;
-      height: 120px;
-      margin: 20px;
+      width: 50px;
+      height: 50px;
+      margin: 10px;
     }
 
     .pic {
-      margin: 5px 30px;
-      border-radius: 30px;
+      margin: 5px 10px;
+      border-radius: 10px;
     }
   </style>
 
   <body>
     <div id="mainPic"></div>
     <div>
-      <button type="button"><img src="./img/play.png" width="80%" /></button>
-      <button type="button"><img src="./img/stop.png" width="80%" /></button>
+      <button type="button"><img src="./img/play.png" width="100%" /></button>
+      <button type="button"><img src="./img/stop.png" width="100%" /></button>
     </div>
     <table>
       <tr>
@@ -66,19 +69,19 @@
       var z = "";
       var x = document.getElementsByTagName("button");
       var div = (x[0].onclick = function() {
-        z = setInterval(ham, 500);
+        z = setInterval(ham, 1000);
       });
 
+      var i = 0;
       function ham() {
-        x[0].onclick = function() {
-          for (var i = 1; i <= 6; i++) {
-            document.getElementById("mainPic").innerHTML =
-              '<img src="./img/' + i + '.jpg" width="80%">';
-          }
-        };
+        if (i === 6) i = 0;
+        if (i < 6) i++;
+        document.getElementById("mainPic").innerHTML =
+          '<img src="./img/' + i + '.jpg" width="20%">';
       }
 
       x[1].onclick = function() {
+        clearInterval(z);
         document.getElementById("mainPic").innerHTML = "";
       };
     </script>
