@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./img/logo.png" />
+    <title>Javascript 1</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Tahoma !important;
+      font: inherit;
+      text-align: center;
+      font-size: 30pt;
+      margin: 50px 100px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    select {
+      max-width: 100%;
+      font-size: 20pt;
+    }
+  </style>
+
+  <body>
+    <p>CHOOSE YOUR DAY OF BIRTH</p>
+    <form name="formDOB">
+      <select name="day" id="day">
+        <script>
+          var day = "";
+          for (var i = 1; i <= 31; i++) {
+            day += "<option>" + i + "</option>";
+          }
+          document.write(day);
+        </script>
+      </select>
+      <select name="month" id="month">
+        <script>
+          var month = "";
+          for (var i = 1; i <= 12; i++) {
+            month += "<option>" + i + "</option>";
+          }
+          document.write(month);
+        </script>
+      </select>
+      <select name="year" id="year">
+        <script>
+          var year = "";
+          for (var i = 1980; i <= 2019; i++) {
+            year += "<option>" + i + "</option>";
+          }
+          document.write(year);
+        </script>
+      </select>
+    </form>
+  </body>
+</html>

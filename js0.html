@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./img/logo.png" />
+    <title>Javascript 0</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Tahoma !important;
+      font: inherit;
+      text-align: center;
+      font-size: 30pt;
+      margin: 50px 100px;
+      max-width: 100%;
+    }
+
+    #mainPic {
+      height: 200px;
+      width: 200px;
+      text-align: center;
+    }
+
+    table {
+      text-align: center;
+      margin: 20px 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      width: 120px;
+      height: 120px;
+      margin: 20px;
+    }
+
+    .pic {
+      margin: 5px 30px;
+      border-radius: 30px;
+    }
+  </style>
+
+  <body>
+    <div id="mainPic"></div>
+    <div>
+      <button type="button"><img src="./img/play.png" width="80%" /></button>
+      <button type="button"><img src="./img/stop.png" width="80%" /></button>
+    </div>
+    <table>
+      <tr>
+        <td><img class="pic" id="1" src="./img/1.jpg" width="80%" /></td>
+        <td><img class="pic" id="2" src="./img/2.jpg" width="80%" /></td>
+        <td><img class="pic" id="3" src="./img/3.jpg" width="80%" /></td>
+        <td><img class="pic" id="4" src="./img/4.jpg" width="80%" /></td>
+        <td><img class="pic" id="5" src="./img/5.jpg" width="80%" /></td>
+        <td><img class="pic" id="6" src="./img/6.jpg" width="80%" /></td>
+      </tr>
+    </table>
+
+    <script>
+      var z = "";
+      var x = document.getElementsByTagName("button");
+      var div = document.getElementById("mainPic");
+
+      x[0].onclick = function() {
+        z = setInterval(ham, 1000);
+      };
+
+      function ham() {
+        x[0].onclick = function() {
+          for (var i = 1; i <= 6; i++) {
+            div.innerHTML = '<img src="./img/' + i + '.jpg" width="80%">';
+          }
+        };
+      }
+
+      x[1].onclick = function() {};
+    </script>
+  </body>
+</html>
