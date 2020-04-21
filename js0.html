@@ -68,7 +68,7 @@
     <script>
       var z = "";
       var x = document.getElementsByTagName("button");
-      var div = (x[0].onclick = function() {
+      var div = (x[0].onclick = function () {
         z = setInterval(ham, 1000);
       });
 
@@ -80,9 +80,9 @@
           '<img src="./img/' + i + '.jpg" width="20%">';
       }
 
-      x[1].onclick = function() {
+      x[1].onclick = function () {
         clearInterval(z);
-        document.getElementById("mainPic").innerHTML = "";
+        // document.getElementById("mainPic").innerHTML = "";
       };
     </script>
   </body>

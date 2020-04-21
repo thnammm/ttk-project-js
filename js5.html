@@ -40,7 +40,7 @@
     <script type="text/javascript">
       var z = "";
       var x = document.getElementsByTagName("button");
-      var y = (x[0].onclick = function() {
+      var y = (x[0].onclick = function () {
         z = setInterval(ham, 1000);
       });
       var a = "";
@@ -48,9 +48,10 @@
         a++;
         document.getElementById("counter").innerHTML = a;
       }
-      x[1].onclick = function() {
+      x[1].onclick = function () {
         clearInterval(z);
         document.getElementById("counter").innerHTML = "1";
+        a = "";
       };
     </script>
   </body>
